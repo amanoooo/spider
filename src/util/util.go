@@ -15,6 +15,8 @@ var ENTRY = ""
 var IMG_ENDPOINT = os.Getenv("IMG_ENDPOINT")
 var DB_HOST = os.Getenv("DB_HOST")
 var DB_PORT = os.Getenv("DB_PORT")
+var DB_NAME = os.Getenv("DB_NAME")
+
 var Pid = os.Getpid()
 
 func init() {
@@ -27,19 +29,23 @@ func init() {
 		IMG_ENDPOINT = osUpload
 	}
 	if DB_HOST == "" {
-		DB_HOST = "218.168.168.105"
+		DB_HOST = "127.0.0.1"
 	}
 	if DB_PORT == "" {
 		DB_PORT = "3306"
 	}
+	if DB_NAME == "" {
+		DB_NAME = "spider"
+	}
 	if IMG_ENDPOINT == "" {
-		IMG_ENDPOINT = "http://218.168.168.105:8888"
+		IMG_ENDPOINT = "http://127.0.0.1:8888"
 	}
 
 	fmt.Println("ProxyList:", ProxyList)
 	fmt.Println("ENV:", ENV)
 	fmt.Println("ENTRY:", ENTRY)
 	fmt.Println("Pid:", Pid)
+	fmt.Println("DB_NAME:", DB_NAME)
 }
 
 func CheckError(errMasg error) {

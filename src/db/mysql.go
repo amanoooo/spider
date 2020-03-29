@@ -3,7 +3,7 @@ package db
 import (
 	"database/sql"
 	"fmt"
-	"github.com/lin1heart/spider/src/util"
+	"github.com/amanoooo/spider/src/util"
 )
 import _ "github.com/go-sql-driver/mysql"
 
@@ -15,7 +15,7 @@ func init() {
 	//  only use mysql directly
 	if util.ENV != "aaaaaaaa" {
 		var err error
-		source := fmt.Sprintf("root:root@tcp(%s:%s)/spider?charset=utf8", util.DB_HOST, util.DB_PORT)
+		source := fmt.Sprintf("root:root@tcp(%s:%s)/%s?charset=utf8", util.DB_HOST, util.DB_PORT, util.DB_NAME)
 		fmt.Println("db source", source)
 		Mysql, err = sql.Open("mysql", source)
 		util.CheckError(err)
