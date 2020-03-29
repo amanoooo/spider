@@ -8,12 +8,11 @@ import (
 	"os"
 )
 
-
 func main() {
 	length := 10000
 
 	fmt.Println("pid is ", os.Getpid())
-	for index:=1; index < length; index ++{
+	for index := 1; index < length; index++ {
 		valid := validate("http://localhost:8888/1024px-Bitcoin.svg.png", index)
 		fmt.Printf("%d is valid %v;", index, valid)
 	}
@@ -31,10 +30,10 @@ func validate(url string, id int) bool {
 	resp, err := client.Get(url)
 	util.CheckError(err)
 
-	defer func () {
+	defer func() {
 		err := resp.Body.Close()
 		util.CheckError(err)
-	} ()
+	}()
 
 	if 200 != resp.StatusCode {
 		fmt.Printf("id %d 404 url %s \n", id, url)

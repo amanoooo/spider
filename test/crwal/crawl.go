@@ -2,9 +2,9 @@ package crwal
 
 import (
 	"fmt"
+	"github.com/amanoooo/spider/src/util"
 	"github.com/gocolly/colly"
 	"github.com/gocolly/colly/proxy"
-	"github.com/amanoooo/spider/src/util"
 	"math/rand"
 	"strings"
 )

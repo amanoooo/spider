@@ -55,10 +55,10 @@ func validate(url string, id int) bool {
 	resp, err := client.Get(url)
 	util.CheckError(err)
 
-	defer func () {
+	defer func() {
 		err := resp.Body.Close()
 		util.CheckError(err)
-	} ()
+	}()
 
 	if 404 == resp.StatusCode {
 		fmt.Printf("id %d 404 url %s \n", id, url)

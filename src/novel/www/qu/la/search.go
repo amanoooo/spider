@@ -3,9 +3,9 @@ package la
 import (
 	"crypto/tls"
 	"fmt"
-	"github.com/gocolly/colly"
 	"github.com/amanoooo/spider/src/db"
 	"github.com/amanoooo/spider/src/util"
+	"github.com/gocolly/colly"
 	"log"
 	"net/http"
 	"net/url"
